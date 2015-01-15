@@ -141,6 +141,8 @@ module Sensu
         case service
         when "client"
           [:checks]
+        when "agent"
+          [:checks, :discoverers]
         when "server"
           Extension::CATEGORIES.reject { |category| category == :checks }
         else
